@@ -1,21 +1,38 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+// import CenterBanner from '../centerBanner/CenterBanner.js'
+import React, { useRef, useState, useEffect } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+
+const Box = (props) => {
+  const boxRef = useRef();// This is the same as creating an element in javascirpt
+
+  useFrame((state, delta) => {
+    boxRef.current.rotation.x += 0.02;
+    boxRef.current.rotation.y += 0.03;
+})
+
+
+  return (
+      <mesh
+        {...props} //means pass all elements of the props array.
+        ref={boxRef}
+      >
+      <boxGeometry args={[3, 3, 3]} />
+      <meshNormalMaterial color= "hotpink" wireFrame={true} />
+      </mesh>
+    );
+}
 
 
 function App() {
-    
+
+
   return (
     <div className="app">
       <h1 className="title background">Welcome To the Land Of Code</h1>
-      <div className="centerstagebanner">
-        {/*this is how you can pull images from the public folder dynamiclly*/}
-        <img src={process.env.PUBLIC_URL+"lightcircle1.png"} alt="first lightimg" height={200} width={200} />
-        <img src={process.env.PUBLIC_URL+"lightcircle2.png"} alt="first lightimg" height={200} width={200} />
-        <img src={process.env.PUBLIC_URL+"lightcircle3.png"} alt="first lightimg" height={200} width={200} />
-        <img src={process.env.PUBLIC_URL+"computerstage.png"} alt="first lightimg" height={200} width={200} />
-        <img src={process.env.PUBLIC_URL+"floatingcpu.png"} alt="first lightimg" height={200} width={200} />
-        <img src={process.env.PUBLIC_URL+"whitelight.png"} alt="first lightimg" height={200} width={200} />
-      </div>
+          <Canvas>
+            <Box />
+          </Canvas>
       <h1 className="title background"> About me</h1>
       <div className="aboutme">
         <p>I am a self-taught Full-Stack Developer, practicing in JavaScript. 
