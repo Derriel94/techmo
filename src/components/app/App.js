@@ -3,26 +3,37 @@ import './App.css';
 import React, { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 
-const Box = (props) => {
-  const boxRef = useRef();// This is the same as creating an element in javascirpt
-
-  useFrame((state, delta) => {
-    boxRef.current.rotation.x += 0.02;
-    boxRef.current.rotation.y += 0.03;
-})
-
+const Sphere = (props) => {
 
   return (
-      <mesh
-        {...props} //means pass all elements of the props array.
-        ref={boxRef}
-      >
-      <boxGeometry args={[3, 3, 3]} />
-      <meshNormalMaterial color= "hotpink" wireFrame={true} />
-      </mesh>
+    <mesh visible userData={{ test: "hey test object "}} position ={[0, 0, 0]} castShadow>
+      <sphereGeometry attach="geometry" args={[1, 16, 16]} />
+      <meshStandardMaterial
+        attach="material"
+        color="white"
+        transparent
+        roughness={0.1}
+        metalness={0.1}
+      />
+    </mesh>
     );
 }
 
+const Light = ({brightness, color}) => {
+
+  return (
+      <rectAreaLight
+      width={3}
+      height={3}
+      color={color}
+      intensity={brightness}
+      position={[-2, 0, 5]}
+      lookAt={[0,0,0]}
+      penumbra={1}
+      castShadow
+      />
+    );
+}
 
 function App() {
 
@@ -30,9 +41,15 @@ function App() {
   return (
     <div className="app">
       <h1 className="title background">Welcome To the Land Of Code</h1>
-          <Canvas>
-            <Box />
-          </Canvas>
+      <div className="computer_container">
+      <Canvas>
+      <Light brightness={7} color={"blue"} />
+        <Sphere />
+      }
+      }
+      </Canvas>
+
+      </div>
       <h1 className="title background"> About me</h1>
       <div className="aboutme">
         <p>I am a self-taught Full-Stack Developer, practicing in JavaScript. 
