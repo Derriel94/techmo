@@ -1,9 +1,12 @@
 import './App.css';
-import Logo from './Images/CenterLogoGC.gif';
-import NavLogo from './Images/NavLogoGC.png';
 import React from 'react';
+import Logo from './../Logo/Logo.js';
 import Navigation from './../Navigation/Navigation.js';
+import Banner from './../Banner/Banner.js';
+import Projects from './../Projects/Projects.js';
+import ContactCard from './../ContactCard/ContactCard.js';
 import Particles from 'react-tsparticles';
+
 
 
 const App = () => {
@@ -21,8 +24,8 @@ const App = () => {
           "opacity": 0.4,
           "shadow": {
             "color": {
-              "value": "#000000",
-              "opacity": 0.8,
+              "value": "#a5cfe3",
+              "opacity": 1,
             },
             "enable": true
           }
@@ -82,27 +85,18 @@ const App = () => {
   ;
 
   return (
-    <div className="App">
+    <div className="App tc">
       <Particles className="particles" params={particleParams}/>
       <div className="Nav h-20 background">
-        <img src={NavLogo} className="" style={{height: '100%', width: 'auto'}} />
-        <div className="glow neonText dim pl6">Ghost Code Sanctum</div>
+        <Logo />
+        <h1 className="glow neonText dim tc pl6">Ghost Code Sanctum</h1>
         <Navigation />
       </div>
-      <div className="centerPiece_Component pointer"></div>
-      <h1 className="glow neonText h-15 background"> Different Worlds Through Code</h1>
-      <div className="home_projects" style={{display: 'flex', justifyContent: 'space-around'}}>
-        <div className="box bg-light-blue br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20" >
-
-        </div>
-        <div className="box bg-light-green br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20" >
-
-        </div>
-        <div className="box bg-purple  br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20" >
-
-        </div>
-      </div>
-        <h1 className="title background"> Contact Me</h1>
+      <Banner />
+      <h1 className="glow neonText background"> Different Worlds Through Code</h1>
+      <Projects />
+      <h1 className="glow neonText background">Contact Our Leader Techmo!</h1>
+      <ContactCard />
       </div>
   );
 }

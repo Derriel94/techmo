@@ -12,7 +12,7 @@ body,
   padding: 0;
 }
 .App {
- background: white;
+ background: black;
  font-family:  "Courier New", Courier, monospace;
  font-weight: bold;
 }
@@ -26,8 +26,9 @@ body,
   height: 100px;
 }
 .centerPiece_Component {
-  height: 75vh;
-  background: white url(./Images/CenterLogoGC.gif) no-repeat fixed center;
+  height: 70vh;
+  width: auto;
+  background: #e7f6fc url(./Images/BlueLogoGC.gif) no-repeat fixed center;
 }
 .Center {
   display: flex;
