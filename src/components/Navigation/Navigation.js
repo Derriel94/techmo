@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Navigation = (isHome) => {
+const Navigation = ( {isHome, onRouteChange} ) => {
 
 	if (isHome) {
 		return (
-			<nav className="neonText underline">
+			<nav onClick={ ()=>onRouteChange('projects')} className="neonText underline">
 				<p> Creator: Derriel Collins </p>
 				<p className="pt1 pointer"> Projects </p>
 			</nav>
@@ -12,7 +12,7 @@ const Navigation = (isHome) => {
 			);
 	} else {
 		return (
-			<nav className="neonText underline">
+			<nav onClick={ ()=>onRouteChange('home')} className="neonText underline">
 				<p> Creator: Derriel Collins </p>
 				<p className="pt1 pointer"> Home </p>
 			</nav>

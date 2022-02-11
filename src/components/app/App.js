@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from './../Logo/Logo.js';
 import Navigation from './../Navigation/Navigation.js';
 import Banner from './../Banner/Banner.js';
@@ -25,7 +25,7 @@ const App = () => {
           "shadow": {
             "color": {
               "value": "#a5cfe3",
-              "opacity": 1,
+              "opacity": 0.8,
             },
             "enable": true
           }
@@ -75,14 +75,25 @@ const App = () => {
             "max": 5
           },
           "animation": {
-            "speed": 40,
+            "speed": 100,
             "minimumValue": 0.1
           }
         }
       }
+
 };
 
-  ;
+  const [route, setRoute] = useState('home');
+  const [isHome, setIsHome] = useState(true);
+
+  const onRouteChange = (route) => {
+      setRoute(route);
+      if (route === 'home') {
+        setIsHome(true);
+      } else {
+        setIsHome(false);
+      }
+  };
 
   return (
     <div className="App tc">
@@ -90,14 +101,23 @@ const App = () => {
       <div className="Nav h-20 background">
         <Logo />
         <h1 className="glow neonText dim tc pl6">Ghost Code Sanctum</h1>
-        <Navigation />
+        <Navigation isHome={isHome} onRouteChange={onRouteChange} />
       </div>
-      <Banner />
-      <h1 className="glow neonText background"> Different Worlds Through Code</h1>
-      <Projects />
-      <h1 className="glow neonText background">Contact Our Leader Techmo!</h1>
-      <ContactCard />
-      </div>
+      { route === 'home'
+        ? <div>
+            <Banner />
+            <h1 className="glow neonText background"> Different Worlds Through Code</h1>
+            <Projects />
+            <h1 className="glow neonText background">Contact Our Leader Techmo!</h1>
+            <ContactCard />
+          </div>
+        : <div>
+            <h1 className="glow neonText background"> Different Worlds Through Code</h1>
+            <Projects />
+            <Banner />
+          </div>  
+      }
+    </div>
   );
 }
 
