@@ -8,57 +8,21 @@ import Particles from 'react-tsparticles';
 
 const App = () => {
   const particleParams = {
-      "background": {
+    "particles": {
+      "color": {
+        "value": "#a5cfe3"
+      },
+      "links": {
         "color": {
-          "value": "#0d47a1"
+          "value": "#a5cfe3"
         },
-        "position": "50% 50%",
-        "repeat": "no-repeat",
-        "size": "cover"
-      },
-      "fullScreen": {
-        "zIndex": 1
-      },
-      "interactivity": {
-        "events": {
-          "onClick": {
-            "enable": true,
-            "mode": "push"
-          },
-          "onHover": {
-            "enable": true,
-            "mode": "repulse",
-            "parallax": {
-              "force": 60
-            }
-          }
-        },
-        "modes": {
-          "bubble": {
-            "distance": 400,
-            "duration": 2,
-            "opacity": 0.8,
-            "size": 40
-          },
-          "grab": {
-            "distance": 400
-          }
-        }
-      },
-      "particles": {
-        "color": {
-          "value": "#ffffff"
-        },
-        "links": {
-          "color": {
-            "value": "#ffffff"
-          },
-          "distance": 150,
+          "distance": 80,
           "enable": true,
           "opacity": 0.4,
           "shadow": {
             "color": {
-              "value": "#000000"
+              "value": "#000000",
+              "opacity": 0.8,
             },
             "enable": true
           }
@@ -126,21 +90,17 @@ const App = () => {
         <Navigation />
       </div>
       <div className="centerPiece_Component pointer"></div>
-      <h1 className="glow neonText h-15 background"> About Us</h1>
-      <div className="aboutme">
-        <p>I am a self-taught Full-Stack Developer, practicing in JavaScript. 
-        I use technologies such as React and Angular in combination with mySQL,
-         PostgreSQL, Express and Node.js to achieve my desired applications. 
-         I hold my Code to a high standard practicing clean code techniques 
-         that I have picked up from personal readings from books like “Clean Code” 
-         by Robert “uncle bob” Martin and online courses such as 
-         “The Complete Web Developer: Zero To Mastery” and others. 
-         I chose to specialize in JavaScript because of its massive use in the industry, 
-         in combination with things like npm, building applications becomes 
-         smoother and code becomes more maintainable. 
-         I am looking for an opportunity to earn a living wage while developing my craft 
-         and becoming a stronger full-stack developer. My dream is to eventually 
-         develop my own simulation technology.</p>
+      <h1 className="glow neonText h-15 background"> Different Worlds Through Code</h1>
+      <div className="home_projects" style={{display: 'flex', justifyContent: 'space-around'}}>
+        <div className="box bg-light-blue br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20" >
+
+        </div>
+        <div className="box bg-light-green br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20" >
+
+        </div>
+        <div className="box bg-purple  br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20" >
+
+        </div>
       </div>
         <h1 className="title background"> Contact Me</h1>
       </div>
