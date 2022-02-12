@@ -81,10 +81,24 @@ const App = () => {
         }
       }
 
-};
+  };
+
+  const ProjectListArray = [ 
+    {id:[0], projectTitle: ['World of Code'], url: ['ghostcode.com']},
+    {id:[1], projectTitle: ['Flight Game'], url: ['ghostcode.com']},
+    {id:[2], projectTitle: ['Egypt Facts Directory'], url:['ghostcode.com']},
+    {id:[3], projectTitle: ['Bowling Game'], url: ['ghostcode.com']},
+    {id:[4], projectTitle: ['Smart Brain Ui'], url: ['ghostcode.com']},
+    {id:[5], projectTitle: ['MaxxHp'], url: ['ghostcode.com']},
+    {id:[6], projectTitle: ['WorldofCode'], url: ['ghostcode.com']},
+    {id:[7], projectTitle: ['Woe'], url: ['ghostcode.com']},
+    {id:[8], projectTitle: ['WorCode'], url: ['ghostcode.com']},
+    {id:[9], projectTitle: ['dode'], url: ['ghostcode.com']},
+  ];
 
   const [route, setRoute] = useState('home');
   const [isHome, setIsHome] = useState(true);
+  // const [projectList, setProjectList] = useState( ProjectListArray );
 
   const onRouteChange = (route) => {
       setRoute(route);
@@ -98,25 +112,31 @@ const App = () => {
   return (
     <div className="App tc">
       <Particles className="particles" params={particleParams}/>
-      <div className="Nav h-20 background">
-        <Logo />
-        <h1 className="glow neonText dim tc pl6">Ghost Code Sanctum</h1>
-        <Navigation isHome={isHome} onRouteChange={onRouteChange} />
-      </div>
-      { route === 'home'
-        ? <div>
+        <div className="Nav h-20 background">
+          <Logo />
+          <h1 className="glow neonText dim tc pl6">Ghost Code Sanctum</h1>
+          <Navigation isHome={isHome} onRouteChange={onRouteChange} />
+        </div>
+        { route === 'home'
+          ? <div>
+              <Banner />           
+              <Projects onRouteChange={onRouteChange} isHome={isHome} />
+              <ContactCard />  
+            </div>
+          : <div>
             <Banner />
-            <h1 className="glow neonText background"> Different Worlds Through Code</h1>
-            <Projects />
-            <h1 className="glow neonText background">Contact Our Leader Techmo!</h1>
-            <ContactCard />
-          </div>
-        : <div>
-            <h1 className="glow neonText background"> Different Worlds Through Code</h1>
-            <Projects />
-            <Banner />
-          </div>  
-      }
+              <Projects isHome={isHome} projectList={ProjectListArray} />
+            </div>  
+        }
+        <div className="footer" style={{display: 'flex', justifyContent: 'center'}}>
+          <ul>
+            <li className="f3 underline">Services</li>
+            <li className="pt2">Web Design</li>
+            <li className="pt2">Graphic Design</li>
+            <li className="pt2">SoftwareEngineer</li>
+            <li className="pt2">Marketing And Consulting</li>
+          </ul>
+        </div>
     </div>
   );
 }

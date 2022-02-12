@@ -1,10 +1,13 @@
-
 import React from 'react';
+import './Banner.css'
+import bannerCenterPiece from './../app/Images/NavLogoGC.png';
 
 const Banner = () => {
 
 	return (
-		<div className="centerPiece_Component"></div>
+		<div className="">
+			<img alt="centerPiece" src={bannerCenterPiece} />
+		</div>
 		);
 }
 
