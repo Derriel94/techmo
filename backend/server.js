@@ -1,10 +1,40 @@
-const http = require('http');
+const express = require('express');
+const cors = require('cors')
 
-const server = http.createServer((request, response) => {
-	console.log(request.headers)
-	console.log(request.method)
-	console.log(request.url)
-});
+const app = express();
 
-server.listen(3000);
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+app.use(cors());
 
+const database = {
+	ProjectsArray: [
+		{
+			id: '0',
+			projectName: 'GhostCodeSite',
+			projectUrl: 'localhost:3000'
+		},
+		{
+			id: '1',
+			projectName: 'Smart_brain',
+			projectUrl: 'localhost:3000'
+		}
+	]
+}
+
+app.get('/', (req, res)=> {
+	console.log('/home')
+
+})
+
+
+app.get('/projects', (req, res) => {
+	console.log('/projects')
+	res.send(database.ProjectsArray);
+})
+
+
+
+app.listen(3001, ()=> {
+	console.log("appp is here")
+})

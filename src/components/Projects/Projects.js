@@ -1,7 +1,32 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './Projects.css'
 
 const Projects = ( {isHome, onRouteChange, projectList} ) => {
+	const [data, setData]= useState([]);
+
+	const getData = () => {
+		fetch('http://localhost:3001/projects',{
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept': 'application/json'
+			}
+		})
+		.then((response)=>{
+			console.log(response)
+			return response.json();
+		})
+		.then((myJson)=>{
+			console.log(myJson);
+			setData(myJson)
+			
+		})
+	}
+
+
+	useEffect(()=> {
+		getData()
+
+	},[])
 
 	if (isHome) {
 		return (
@@ -23,10 +48,11 @@ const Projects = ( {isHome, onRouteChange, projectList} ) => {
 	} else {
 	return (
 		<div>
+		{console.log(data)}
 			<h1 className="glow neonText background"> Different Worlds Through Code</h1>
 			<div className="projects" style={{display: 'flex', justifyContent: 'space-around'}}>
-				{projectList.map((project, i)=>{
-					return <div key={i}className="box bg-light-blue br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20">{project.projectTitle}</div>;	
+				{data.map((project)=>{
+					return <div className="box bg-light-blue br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20">{project.projectName}</div>;	
 				})}       	   	
 	      	</div>
       	</div>
