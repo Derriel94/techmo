@@ -24,7 +24,7 @@ const database = {
 
 app.get('/', (req, res)=> {
 	console.log('/home')
-	console.log('testing enviroment')
+	console.log('testing enviromdddddent')
 
 })
 
