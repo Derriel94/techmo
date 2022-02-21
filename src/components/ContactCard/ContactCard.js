@@ -1,9 +1,10 @@
 import React from 'react';
+import './ContactCard.css' ;
 import ContactImg from './../Logo/Images/NavLogoGC.png';
 const ContactCard = () => {
 	
 	return (
-		<div>
+		<div className="contactCard">
 			<h1 className="glow neonText background">Contact Our Leader Techmo!</h1>
 			<div className="tc mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
 				<img src={ContactImg} className="br-100 h4 w4 dib" alt="Derriel Collins" />	

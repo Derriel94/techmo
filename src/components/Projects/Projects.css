@@ -1,0 +1,15 @@
+.projectsGrid {
+	display: flex;
+	flex-direction: column;
+}
+.projects {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+}
+.box {
+	width:  300px;
+	height: 300px;
+}
