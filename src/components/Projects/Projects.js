@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './Projects.css'
 
 
-const Projects = ( {isHome, onRouteChange, data} ) => {
+const Projects = ( {isHome, onRouteChange, projectsArray} ) => {
 	if (isHome) {
 		return (
 		<div className="projectsGrid">
@@ -25,7 +25,7 @@ const Projects = ( {isHome, onRouteChange, data} ) => {
 		<div className="projectsGrid">
 			<h1 className="glow neonText background"> Different Worlds Through Code</h1>
 			<div className="projects">
-				{data.map((project)=>{
+				{projectsArray.map((project)=>{
 					return <div className="box bg-light-blue br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20">{project.projectName}</div>;	
 				})}       	   	
 	      	</div>

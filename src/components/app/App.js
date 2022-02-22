@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Logo from './../Logo/Logo.js';
 import Navigation from './../Navigation/Navigation.js';
 import Banner from './../Banner/Banner.js';
@@ -84,31 +84,48 @@ const App = () => {
   };
 
 
-  const [data, setData]= useState([]);
-
-  const getData = () => {
-    fetch('http://localhost:3001/projects',{
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    })
-    .then((response)=>{
-     
-      return response.json();
-    })
-    .then((myJson)=>{
-      
-      setData(myJson)
-      
-    })
+const projectsArray = [
+  {
+    id: '0',
+    projectName: 'GhostCodeSite',
+    projectUrl: 'localhost:3000'
+  },
+  {
+    id: '1',
+    projectName: 'Smart_brain',
+    projectUrl: 'localhost:3000'
+  },
+  {
+    id: '2',
+    projectName: 'Virtual Shopping',
+    projectUrl: 'localhost:3000'
+  },
+  {
+    id: '3',
+    projectName: 'Techmo News Letter',
+    projectUrl: 'localhost:3000'
+  },
+      {
+    id: '4',
+    projectName: 'Playlist Component',
+    projectUrl: 'localhost:3000'
+  },
+  {
+    id: '5',
+    projectName: 'MaxxHp Landing Page',
+    projectUrl: 'localhost:3000'
+  },
+      {
+    id: '6',
+    projectName: 'Books Are Us Landing Page',
+    projectUrl: 'localhost:3000'
+  },
+  {
+    id: '7',
+    projectName: 'This Is the Mall!!! Logo',
+    projectUrl: 'localhost:3000'
   }
-
-
-  useEffect(()=> {
-    getData()
-
-  },[])
+];
 
   const [route, setRoute] = useState('home');
   const [isHome, setIsHome] = useState(true);
@@ -146,7 +163,7 @@ const App = () => {
             </div>
           : <div>
               <Banner />
-              <Projects isHome={isHome} data={data} />
+              <Projects isHome={isHome} projectsArray={projectsArray} />
               <ContactCard /> 
               <div className="background footer">
                 <h1 className="glow neonText dim f3 underline">Services</h1>
