@@ -88,42 +88,43 @@ const projectsArray = [
   {
     id: '0',
     projectName: 'GhostCodeSite',
-    projectUrl: 'localhost:3000'
+    projectUrl: 'localhost:3000',
+    imgUrl: './Images/ghostcodeimg.PNG'
   },
   {
     id: '1',
     projectName: 'Smart_brain',
-    projectUrl: 'localhost:3000'
+    projectUrl: 'https://smart-brain-cli.herokuapp.com/',
+    imgUrl: './Images/smartbrainimg.PNG'
   },
   {
     id: '2',
-    projectName: 'Virtual Shopping',
-    projectUrl: 'localhost:3000'
-  },
-  {
-    id: '3',
     projectName: 'Techmo News Letter',
     projectUrl: 'localhost:3000'
   },
-      {
+    {
+    id: '3',
+    projectName: 'Playlist Component (Jamming)',
+    projectUrl: 'https://smart-brain-cli.herokuapp.com/',
+    imgUrl: './Images/smartbrainimg.PNG'
+  },
+  {
     id: '4',
-    projectName: 'Playlist Component',
-    projectUrl: 'localhost:3000'
-  },
-  {
-    id: '5',
     projectName: 'MaxxHp Landing Page',
-    projectUrl: 'localhost:3000'
+    projectUrl: 'https://smart-brain-cli.herokuapp.com/',
+    imgUrl: './Images/smartbrainimg.PNG'
   },
-      {
-    id: '6',
+    {
+    id: '5',
     projectName: 'Books Are Us Landing Page',
-    projectUrl: 'localhost:3000'
+    projectUrl: 'https://smart-brain-cli.herokuapp.com/',
+    imgUrl: './Images/smartbrainimg.PNG'
   },
   {
-    id: '7',
+    id: '6',
     projectName: 'This Is the Mall!!! Logo',
-    projectUrl: 'localhost:3000'
+    projectUrl: 'https://smart-brain-cli.herokuapp.com/',
+    imgUrl: './Images/smartbrainimg.PNG'
   }
 ];
 
