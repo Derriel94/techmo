@@ -34,8 +34,6 @@ body,
 .nav-bar {
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  height: 60px;
 }
 .background {
   background: linear-gradient(0.25turn, #4e7a51, ghostwhite, #a5cfe3);
