@@ -1,7 +1,9 @@
 import './App.css';
 import React, { useState } from 'react';
+import { Link, Outlet } from "react-router-dom";
 import Logo from './../Logo/Logo.js';
 import Navigation from './../Navigation/Navigation.js';
+import Navbar from './../Navbar/Navbar.js';
 import Banner from './../Banner/Banner.js';
 import Projects from './../Projects/Projects.js';
 import ContactCard from './../ContactCard/ContactCard.js';
@@ -140,7 +142,8 @@ const projectsArray = [
         setIsHome(false);
       }
   };
-
+const test = false;
+if (test) {
   return (
     <div className="App tc">
       <Particles className="particles" params={particleParams}/>
@@ -177,6 +180,24 @@ const projectsArray = [
         }
     </div>
   );
+} else {
+    return (
+    <div className="App tc">
+    <Particles className="particles" params={particleParams}/>
+      <div className="h-10 background">
+        <Navbar 
+          Link={Link} 
+          isHome={isHome}
+        />
+
+      </div>
+      <Logo/>
+      <ContactCard />
+      <Outlet />
+    </div>
+    );
+}
+
 }
 
 export default App;
