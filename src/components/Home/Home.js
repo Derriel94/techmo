@@ -6,7 +6,7 @@ import Particles from 'react-tsparticles';
 import Projects from './../Projects/Projects.js';
 import ContactCard from  './../ContactCard/ContactCard.js';
 
-const Home = ( {isHome, onRouteChange} ) => {
+const Home = ( {onRouteChange, route} ) => {
   const particleParams = {
     "particles": {
       "color": {
@@ -88,7 +88,7 @@ const Home = ( {isHome, onRouteChange} ) => {
 			</div>
 			<Logo />
 			<Outlet />
-			{isHome === true ?  <Projects Link={Link} isHome={isHome} onRouteChange={onRouteChange}/> : <p></p> }
+			{route === 'home' ?  <Projects route={route} Link={Link} onRouteChange={onRouteChange}/> : <p></p> }
 			<ContactCard />
 		</div>
 		);

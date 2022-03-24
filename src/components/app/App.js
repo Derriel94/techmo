@@ -28,7 +28,7 @@ const App = () => {
   return (
      <Router>
       <Routes>
-        <Route path="/" element={<Home isHome={isHome} onRouteChange={onRouteChange} />}>
+        <Route path="/" element={<Home route={route} onRouteChange={onRouteChange} />}>
           <Route path="/projects" element={<Projects />} />
           <Route path='/crew' element={<Crew />} />
         </Route>
