@@ -9,11 +9,14 @@ import Projects from './components/Projects/Projects.js';
 import Crew from './components/Crew/Crew.js';
 import reportWebVitals from './reportWebVitals';
 
+
+
+
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-        <Route path="projects" element={<Projects projectsArray={ProjectsList.projects} />} />
+        <Route path="projects" element={<Projects  projectsArray={ProjectsList.projects} />} />
         <Route path="crew" element={<Crew /> } />
       </Route>
     </Routes>

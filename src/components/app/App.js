@@ -4,8 +4,8 @@ import { Link, Outlet } from "react-router-dom";
 import Logo from './../Logo/Logo.js';
 import Navigation from './../Navigation/Navigation.js';
 import Navbar from './../Navbar/Navbar.js';
-import Banner from './../Banner/Banner.js';
-import Projects from './../Projects/Projects.js';
+// import Banner from './../Banner/Banner.js';
+// import Projects from './../Projects/Projects.js';
 import ContactCard from './../ContactCard/ContactCard.js';
 import Particles from 'react-tsparticles';
 
@@ -86,50 +86,6 @@ const App = () => {
   };
 
 
-const projectsArray = [
-  {
-    id: '0',
-    projectName: 'GhostCodeSite',
-    projectUrl: 'localhost:3000',
-    imgUrl: './Images/ghostcodeimg.PNG'
-  },
-  {
-    id: '1',
-    projectName: 'Smart_brain',
-    projectUrl: 'https://smart-brain-cli.herokuapp.com/',
-    imgUrl: './Images/smartbrainimg.PNG'
-  },
-  {
-    id: '2',
-    projectName: 'Techmo News Letter',
-    projectUrl: 'localhost:3000'
-  },
-    {
-    id: '3',
-    projectName: 'Playlist Component (Jamming)',
-    projectUrl: 'https://smart-brain-cli.herokuapp.com/',
-    imgUrl: './Images/smartbrainimg.PNG'
-  },
-  {
-    id: '4',
-    projectName: 'MaxxHp Landing Page',
-    projectUrl: 'https://smart-brain-cli.herokuapp.com/',
-    imgUrl: './Images/smartbrainimg.PNG'
-  },
-    {
-    id: '5',
-    projectName: 'Books Are Us Landing Page',
-    projectUrl: 'https://smart-brain-cli.herokuapp.com/',
-    imgUrl: './Images/smartbrainimg.PNG'
-  },
-  {
-    id: '6',
-    projectName: 'This Is the Mall!!! Logo',
-    projectUrl: 'https://smart-brain-cli.herokuapp.com/',
-    imgUrl: './Images/smartbrainimg.PNG'
-  }
-];
-
   const [route, setRoute] = useState('home');
   const [isHome, setIsHome] = useState(true);
 
@@ -154,8 +110,8 @@ if (test) {
         </div>
         { route === 'home'
           ? <div>
-              <Banner />           
-              <Projects onRouteChange={onRouteChange} isHome={isHome} />
+              {/*<Banner />  */}         
+              {/*<Projects onRouteChange={onRouteChange} isHome={isHome} />*/}
               <ContactCard />
               <div className="background footer">
                 <div className="glow neonText dim f3 underline">Services</div>
@@ -166,8 +122,8 @@ if (test) {
               </div>
             </div>
           : <div>
-              <Banner />
-              <Projects isHome={isHome} projectsArray={projectsArray} />
+              {/*<Banner />*/}
+              {/*<Projects isHome={isHome} projectsArray={projectsArray} />*/}
               <ContactCard /> 
               <div className="background footer">
                 <h1 className="glow neonText dim f3 underline">Services</h1>
@@ -187,13 +143,12 @@ if (test) {
       <div className="h-10 background">
         <Navbar 
           Link={Link} 
-          isHome={isHome}
         />
 
       </div>
       <Logo/>
-      <ContactCard />
       <Outlet />
+      <ContactCard />
     </div>
     );
 }
