@@ -27,7 +27,7 @@ const ProjectsList = {
   {
     id: '4',
     projectName: 'Books Are us Landing Page',
-    projectUrl: 'https://github.com/Derriel94/Jamming',
+    projectUrl: 'https://github.com/Derriel94/bookclublandingpage',
     imgUrl: 'bookclub.PNG'
   },
   {
