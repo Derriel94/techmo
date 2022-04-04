@@ -2,45 +2,39 @@ const ProjectsList = {
 	projects: [
   {
     id: '0',
-    projectName: 'GhostCodeSite',
-    projectUrl: 'localhost:3000',
+    projectName: 'GhostCode Website!',
+    projectUrl: 'https://ghost-code.herokuapp.com/',
     imgUrl: '/ghostcodeimg.PNG'
   },
   {
     id: '1',
-    projectName: 'Smart_brain',
+    projectName: 'Smart Brain Face Detector',
     projectUrl: 'https://smart-brain-cli.herokuapp.com/',
     imgUrl: '/smartbrainimg.PNG'
   },
   {
     id: '2',
-    projectName: 'Techmo News Letter',
-    projectUrl: 'localhost:3000',
-    imgUrl: '/smartbrainimg.PNG'
+    projectName: 'Ravenous Yelp Clone',
+    projectUrl: 'https://github.com/Derriel94/Ravenous-repo',
+    imgUrl: '/Ravenous.PNG'
   },
     {
     id: '3',
     projectName: 'Playlist Component (Jamming)',
-    projectUrl: 'https://smart-brain-cli.herokuapp.com/',
-    imgUrl: '/smartbrainimg.PNG'
+    projectUrl: 'https://jammingderriel.surge.sh/',
+    imgUrl: '/jamming.PNG'
   },
   {
     id: '4',
-    projectName: 'MaxxHp Landing Page',
-    projectUrl: 'https://smart-brain-cli.herokuapp.com/',
-    imgUrl: '/smartbrainimg.PNG'
-  },
-    {
-    id: '5',
-    projectName: 'Books Are Us Landing Page',
-    projectUrl: 'https://smart-brain-cli.herokuapp.com/',
-    imgUrl: '/smartbrainimg.PNG'
+    projectName: 'Books Are us Landing Page',
+    projectUrl: 'https://github.com/Derriel94/Jamming',
+    imgUrl: 'bookclub.PNG'
   },
   {
-    id: '6',
-    projectName: 'This Is the Mall!!! Logo',
-    projectUrl: 'https://smart-brain-cli.herokuapp.com/',
-    imgUrl: '/smartbrainimg.PNG'
+    id: '5',
+    projectName: 'Gods at war! Landing Page',
+    projectUrl: 'https://github.com/Derriel94/godsAtWar',
+    imgUrl: 'godsatwar.PNG'
   }
 	]
 };

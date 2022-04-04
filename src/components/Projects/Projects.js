@@ -10,10 +10,10 @@ const Projects = ( {isHome, onRouteChange, Link, route} ) => {
 			<h1 className="glow neonText background">Discover What We Can Do For You! </h1>
 			<div className="projects">
 	        	<Link to="/projects" onClick={ ()=>onRouteChange('projects')} className="box bg-light-blue br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20 pointer" >
-	        		Online Shopping
+	        		Front-End Development/Graphic Design!
 	        	</Link>
 	        	<Link to="/projects" onClick={ ()=>onRouteChange('projects')} className="box bg-light-green br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20 pointer" >
-	        		Directories
+	        		Landing Pages!
 	        	</Link>
 	        	<Link to="/projects" onClick={ ()=>onRouteChange('projects')} className="box bg-purple  br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20 pointer" >
 	        		Games and More...
@@ -27,9 +27,9 @@ const Projects = ( {isHome, onRouteChange, Link, route} ) => {
 			<h1 className="glow neonText background">Different Worlds Through Code </h1>
 			<div className="projects">
 				{ProjectsList.projects.map((project)=>{
-					return <a href={project.projectUrl} className="box bg-light-blue br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20">
+					return <a href={project.projectUrl} className="box bg-light-blue br3 pa3">
 								{project.projectName}
-								<img src={process.env.PUBLIC_URL + project.imgUrl} alt="Project"/>
+								<img className="project-img" src={process.env.PUBLIC_URL + project.imgUrl} alt="Project"/>
 						   </a>;	
 				})}       	   	
 	      	</div>
