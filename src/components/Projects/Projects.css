@@ -1,6 +1,7 @@
 .projectsGrid {
 	display: flex;
 	flex-direction: column;
+	padding: 20px;
 }
 .projects {
 	display: flex;

@@ -1,12 +1,8 @@
 import React from 'react';
-import { Link, Outlet } from "react-router-dom";
-import Navbar from './../Navbar/Navbar.js';
-import Logo from './../Logo/Logo.js';
 import Particles from 'react-tsparticles';
-import Projects from './../Projects/Projects.js';
-import ContactCard from  './../ContactCard/ContactCard.js';
+import { Link } from "react-router-dom";
 
-const Home = ( {onRouteChange, route} ) => {
+const Home = () => {
   const particleParams = {
     "particles": {
       "color": {
@@ -83,13 +79,25 @@ const Home = ( {onRouteChange, route} ) => {
 	return (
 		<div className="App tc">
 			<Particles className="particles" params={particleParams} />
-			<div className="h-10 background">
-				<Navbar onRouteChange={onRouteChange} Link={Link} />
-			</div>
-			<Logo />
-			<Outlet />
-			{route === 'home' ?  <Projects route={route} Link={Link} onRouteChange={onRouteChange}/> : <p></p> }
-			<ContactCard />
+      <h1 className="title neonText">Ghost Code Center!</h1>
+      <div className="banner"> 
+        <img alt="GhostCode" className="black" src="./NavLogoGC.png" />
+      </div>
+      <div className="projectsGrid">
+      <h1 className="title neonText">Discover What We Can Do For You! </h1>
+      <div className="black projects">
+            <Link to="/projects" style={{ textDecoration: 'none', color: 'black' }} className="box bg-light-blue br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20 pointer" >
+              Front-End Development/Graphic Design!
+            </Link>
+            <Link to="/projects" style={{ textDecoration: 'none', color: 'black' }} className="box bg-light-green br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20 pointer" >
+              Landing Pages!
+            </Link>
+            <Link to="/projects" style={{ textDecoration: 'none', color: 'black' }} className="box bg-purple  br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20 pointer" >
+              Games and More...
+            </Link>
+            </div>
+        </div>
+	
 		</div>
 		);
 }

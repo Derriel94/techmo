@@ -3,29 +3,11 @@ import ProjectsList from './ProjectsList.js';
 import './Projects.css'
 
 
-const Projects = ( {isHome, onRouteChange, Link, route} ) => {
-	if (route === 'home') {
-		return (										
-		<div className="projectsGrid">
-			<h1 className="glow neonText background">Discover What We Can Do For You! </h1>
-			<div className="projects">
-	        	<Link to="/projects" onClick={ ()=>onRouteChange('projects')} className="box bg-light-blue br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20 pointer" >
-	        		Front-End Development/Graphic Design!
-	        	</Link>
-	        	<Link to="/projects" onClick={ ()=>onRouteChange('projects')} className="box bg-light-green br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20 pointer" >
-	        		Landing Pages!
-	        	</Link>
-	        	<Link to="/projects" onClick={ ()=>onRouteChange('projects')} className="box bg-purple  br3 pa3 pa4-ns mv3 ba b--black-10 h5 w-20 pointer" >
-	        		Games and More...
-	        	</Link>
-	        	</div>
-      	</div>
-      	);
-	} else {
+const Projects = () => {
 	return (
 		<div className="projectsGrid">
-			<h1 className="glow neonText background">Different Worlds Through Code </h1>
-			<div className="projects">
+			<h1 className="neonText">Different Worlds Through Code </h1>
+			<div className="black projects">
 				{ProjectsList.projects.map((project)=>{
 					return <a href={project.projectUrl} className="box bg-light-blue br3 pa3">
 								{project.projectName}
@@ -35,8 +17,6 @@ const Projects = ( {isHome, onRouteChange, Link, route} ) => {
 	      	</div>
       	</div>
 		);
-
-	}
 }
 
 export default Projects;

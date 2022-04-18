@@ -31,14 +31,14 @@ const Crew = () => {
 	const changeBackgroundColor = (e) => {
 		
 		e.target.style.background = "lightblue";
-		e.target.style.fontFamily = "fantasy";
+		
 	}
 	
 
 	return (
-		<div className="crew-component">
-			<h1 className="glow neonText bg-light-green tc h-20 b--black-10">Our Ghostly StarFleet!</h1>
-			<div className="tc Center h-30">
+		<div className="black projectsGrid">
+			<h1 className="neonText">Our Ghostly StarFleet!</h1>
+			<div className="projects tc Center h-30">
 				<div onMouseEnter={()=> setIsShown(true)} 
 					 onMouseLeave={()=> setIsShown(false)}
 					 onMouseOver={changeBackgroundColor} 

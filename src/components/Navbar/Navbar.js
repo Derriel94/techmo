@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
-const Navbar = ( {Link, onRouteChange} ) => {
+const Navbar = ( ) => {
 
 
 	return (
 		<div className="nav-bar">
-			<Link onClick={ ()=>onRouteChange('home')} to="/" className="glow neonText"> Home </Link>
-			<Link onClick={ ()=>onRouteChange('projects')} to="/projects" className="glow neonText"> Projects </Link>
-			<Link onClick={ ()=>onRouteChange('crew')} to="/crew" className="glow neonText"> Crew </Link>
+			<div id="white"><Link to="/" className="glow neonText" style={{ textDecoration: 'none', color: 'black' }}> Home </Link></div>
+			<div id="white"><Link to="/projects" className="glow neonText" style={{ textDecoration: 'none', color: 'black' }}> Projects </Link></div>
+			<div id="white"><Link to="/crew" className="glow neonText" style={{ textDecoration: 'none', color: 'black' }}> Crew </Link></div>
 		</div>
 		);
 
