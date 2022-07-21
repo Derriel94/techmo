@@ -3,7 +3,7 @@ import './ContactCard.css' ;
 const ContactCard = () => {
 	
 	return (
-		<div className="contactCard">
+		<div className="contactCard layer1">
 			<h1 className="title neonText">Contact Our Leader Techmo!</h1>
 			<div className="black">
 			<div className="tc mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
